@@ -1,0 +1,12 @@
+<!-- Campo per aggiungere un nuovo frutto -->
+<input #inputFrutto placeholder="Aggiungi un frutto">
+<button (click)="aggiungiFrutto(inputFrutto.value)">Aggiungi</button>
+<!-- Elenco -->
+<ul>
+<li *ngFor="let frutto of frutti; let i = index">
+{{ i + 1 }}. {{ frutto }}
+<button (click)="rimuoviFrutto(i)">Rimuovi</button>
+</li>
+</ul>
+<!-- Messaggio se l’elenco è vuoto -->
+<p *ngIf="frutti.length === 0">Nessun frutto presente.</p>
