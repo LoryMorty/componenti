@@ -1,18 +1,34 @@
-<div style="border:2px dashed purple; padding:12px; margin:12px 0;">
-  <h3>Esercizio 3 - Gestione studenti</h3>
+<div class="container my-4 p-3 border border-primary rounded-4 bg-light shadow-sm">
+  <h3 class="text-primary mb-3 text-center">Esercizio 3 - Gestione studenti</h3>
 
-  <div style="margin-bottom:10px;">
-    <input type="text" placeholder="Nome studente" [(ngModel)]="nuovoNome">
-    <input type="number" placeholder="Voto" [(ngModel)]="nuovoVoto">
-    <button (click)="aggiungiStudente()">Aggiungi</button>
+  <!-- Form per aggiungere uno studente -->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Nome studente" [(ngModel)]="nuovoNome">
+    <input type="number" class="form-control" placeholder="Voto" [(ngModel)]="nuovoVoto">
+    <button class="btn btn-success" (click)="aggiungiStudente()">Aggiungi</button>
   </div>
 
-  <ul>
-    <li *ngFor="let studente of studenti; let i = index">
-      {{ studente.nome }} - Voto: {{ studente.voto }}
-      <button (click)="eliminaStudente(i)">❌</button>
-    </li>
-  </ul>
+  <!-- Tabella Bootstrap -->
+  <table class="table table-striped table-bordered text-center align-middle">
+    <thead class="table-primary">
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Voto</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let studente of studenti; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ studente.nome }}</td>
+        <td>{{ studente.voto }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="eliminaStudente(i)">Elimina</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  <p *ngIf="studenti.length === 0">Nessuno studente presente.</p>
+  <p *ngIf="studenti.length === 0" class="text-muted text-center">Nessuno studente presente.</p>
 </div>
