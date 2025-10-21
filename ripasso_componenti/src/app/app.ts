@@ -15,20 +15,9 @@ import { Esercizio3 } from './esercizio3/esercizio3';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ripasso_componenti');
-  messaggio = "questo è un messaggio"
-    posts = [
-{
-titolo: 'titolo1',
-testo: 'esempio di testo1'
-},
-{
-titolo: 'titolo1',
-testo: 'esempio di testo2'
-},
-{
-titolo: 'titolo3',
-testo: 'esempio di testo3'
-}
-];
+  posts = [
+    { titolo: 'Ciao', testo: 'Benvenuto' },
+    { titolo: 'Post lungo', testo: 'Questo testo è troppo lungo e non deve essere mostrato' },
+    { titolo: 'Angular', testo: 'Fantastico!' }
+  ];
 }

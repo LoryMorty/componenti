@@ -3,8 +3,12 @@
 <app-esercizio1></app-esercizio1>
 <app-esercizio2></app-esercizio2>
 <app-esercizio3></app-esercizio3>
-<app-post
-*ngFor="let p of posts"
-[titolo]="p.titolo"
-[testo]="p.testo">
-</app-post>
+<h2>Post con meno di 20 caratteri</h2>
+
+<ng-container *ngFor="let p of posts">
+  <app-post
+    *ngIf="p.testo.length <= 20"
+    [titolo]="p.titolo"
+    [testo]="p.testo">
+  </app-post>
+</ng-container>
