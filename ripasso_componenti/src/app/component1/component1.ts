@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-component1',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './component1.css'
 })
 export class Component1 {
-
+  @Input() testo = ''; //può ricevere dati dal padre
 }

@@ -8,18 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './esercizio2.css'
 })
 export class Esercizio2 {
-
-frutti = ['Mela', 'Pera', 'Banana', 'Arancia', 'Ananas'];
-//aggiunge un nuovo elemento all’array
-aggiungiFrutto(nuovo: string) {
-const nome = nuovo.trim();
-if (nome) {
-this.frutti.push(nome);
-}
-}
-
-//rimuove un frutto in base all’indice
-rimuoviFrutto(indice: number) {
-this.frutti.splice(indice, 1);
-}
+  nomi = ['Luca', 'Anna', 'Marco', 'Giulia', 'Paolo'];
 }

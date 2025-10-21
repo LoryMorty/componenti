@@ -1,0 +1,18 @@
+<div style="border:2px dashed purple; padding:12px; margin:12px 0;">
+  <h3>Esercizio 3 - Gestione studenti</h3>
+
+  <div style="margin-bottom:10px;">
+    <input type="text" placeholder="Nome studente" [(ngModel)]="nuovoNome">
+    <input type="number" placeholder="Voto" [(ngModel)]="nuovoVoto">
+    <button (click)="aggiungiStudente()">Aggiungi</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let studente of studenti; let i = index">
+      {{ studente.nome }} - Voto: {{ studente.voto }}
+      <button (click)="eliminaStudente(i)">❌</button>
+    </li>
+  </ul>
+
+  <p *ngIf="studenti.length === 0">Nessuno studente presente.</p>
+</div>
